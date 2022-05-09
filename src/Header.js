@@ -4,9 +4,16 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { useStateValue } from "./StateProvider";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
+  // const [{ basket }, dispatch] = useStateValue();
+  const basket = useSelector((state) => state.item.basket);
+
+  useEffect(() => {
+    console.log(basket);
+  }, [basket]);
 
   return (
     <div className="header">
