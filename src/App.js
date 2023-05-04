@@ -27,10 +27,9 @@ function App() {
       }
       console.log("The user is ", authUser?._delegate.email);
     });
-  }, []);
+  });
 
   return (
-    // BEM
     <Router>
       <div className="app">
         <Routes>

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 function Subtotal() {
   const navigate = useNavigate();
   const basket = useSelector((state) => state.item.basket);
-  const user = useSelector((state) => state.item.user);
+  const user = useSelector((state) => state.user.userdata);
 
   const getBasketTotal = (basket) =>
     basket?.reduce((amount, item) => amount + item.price, 0);
@@ -33,6 +33,7 @@ function Subtotal() {
       />
       <button
         onClick={(e) => {
+          console.log(user);
           if (user) navigate("/payment");
           else {
             window.alert("Please sign in first!");

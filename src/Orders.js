@@ -6,8 +6,6 @@ import Order from "./Order";
 
 function Orders() {
   const user = useSelector((state) => state.user.userdata);
-  const basket = useSelector((state) => state.item.basket);
-
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -18,7 +16,6 @@ function Orders() {
         .collection("orders")
         .orderBy("created", "desc")
         .onSnapshot((snapshot) => {
-          console.log(snapshot.docs);
           setOrders(
             snapshot.docs.map((doc) => ({
               id: doc.id,
@@ -30,12 +27,11 @@ function Orders() {
     } else {
       setOrders([]);
     }
-  }, [user]);
+  }, [user, orders]);
 
   return (
     <div className="orders">
       <h1>Your Orders</h1>
-
       <div className="orders_order">
         {orders.map((order) => (
           <Order order={order} />

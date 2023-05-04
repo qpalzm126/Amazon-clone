@@ -3,11 +3,9 @@ import "./CheckoutProduct.css";
 import { Button } from "react-bootstrap";
 import { remove_from_basket } from "./items";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 
 function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
   const dispatch = useDispatch();
-  const basket = useSelector((state) => state.item.basket);
 
   const removeFromBasket = () => {
     dispatch(remove_from_basket(id));

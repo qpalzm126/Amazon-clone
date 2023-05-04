@@ -16,14 +16,7 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 
 // API routes
-// app.get("/", function (req, res) {
-//   console.log("before hello world");
-//   res.send("hello world");
-// });
-app.get("/", (req, res) => {
-  console.log("123"); // /admin
-  res.send("Admin Homepage");
-});
+
 app.post("/payments/create", async (req, res) => {
   console.log("start /payment/create", req);
   const total = req.query.total;

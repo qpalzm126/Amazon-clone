@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { auth } from "./firebase";
-import { useDispatch, useSelector } from "react-redux";
-import { SET_USER } from "./user";
 
 function Login() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.userdata);
   const [email, setEmail] = useState("");
   const [passward, setPassword] = useState("");
+
   const signIn = (e) => {
     e.preventDefault();
     auth
@@ -22,7 +19,6 @@ function Login() {
         }
       })
       .catch((error) => alert(error.message));
-    // dispatch(SET_USER());
   };
 
   const register = (e) => {

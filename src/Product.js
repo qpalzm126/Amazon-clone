@@ -18,20 +18,6 @@ function Product({ id, title, image, price, rating }) {
     );
   };
 
-  // const addToBasket = () => {
-  //   //dispatch the item into the data layer
-  // //   dispatch({
-  // //     type: "ADD_TO_BASKET",
-  // //     items: {
-  // //       id: id,
-  // //       title: title,
-  // //       image: image,
-  // //       price: price,
-  //       rating: rating,
-  // //     },
-  // //   });
-  // // };
-
   return (
     <div className="product">
       <div className="product_info">

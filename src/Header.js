@@ -4,8 +4,8 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { SET_USER } from "./user";
+import { useState } from "react";
+// import { SET_USER } from "./user";
 import { auth } from "./firebase";
 
 function Header() {
@@ -20,10 +20,6 @@ function Header() {
       console.log(currentUser);
     }
   };
-
-  useEffect(() => {
-    console.log(basket, user);
-  }, [basket, user]);
 
   return (
     <div className="header">
